@@ -1,3 +1,7 @@
 .idea
-Coursework3/bin
-Coursework3/obj
+Core/bin
+Core/obj
+Infrastructure/bin
+Infrastructure/obj
+TelegramService/bin
+TelegramService/obj

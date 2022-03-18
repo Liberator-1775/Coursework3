@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coursework3", "Coursework3\Coursework3.csproj", "{4D92772A-1A33-4964-921E-CCF2B4AF8895}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramService", "TelegramService\TelegramService.csproj", "{92C99536-0B73-4F82-A522-4B10B758D6EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B36879CE-78CE-4517-8B91-3574ABF2AC91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{C5DB292F-6F6D-42B1-9E82-55CA6A811A76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +12,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4D92772A-1A33-4964-921E-CCF2B4AF8895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D92772A-1A33-4964-921E-CCF2B4AF8895}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D92772A-1A33-4964-921E-CCF2B4AF8895}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D92772A-1A33-4964-921E-CCF2B4AF8895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C99536-0B73-4F82-A522-4B10B758D6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C99536-0B73-4F82-A522-4B10B758D6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C99536-0B73-4F82-A522-4B10B758D6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C99536-0B73-4F82-A522-4B10B758D6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B36879CE-78CE-4517-8B91-3574ABF2AC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36879CE-78CE-4517-8B91-3574ABF2AC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36879CE-78CE-4517-8B91-3574ABF2AC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36879CE-78CE-4517-8B91-3574ABF2AC91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DB292F-6F6D-42B1-9E82-55CA6A811A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DB292F-6F6D-42B1-9E82-55CA6A811A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DB292F-6F6D-42B1-9E82-55CA6A811A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DB292F-6F6D-42B1-9E82-55CA6A811A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
