@@ -2,7 +2,7 @@ namespace Core.Base;
 
 public interface IRepository<T>
 {
-    Task CreateAsync(T entity);
+    Task<T> CreateAsync(T entity);
 
     Task<T?> GetAsync(long id);
 

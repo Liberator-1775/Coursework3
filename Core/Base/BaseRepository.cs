@@ -13,10 +13,11 @@ public abstract class BaseRepository<T> : IRepository<T> where T : class
         _set = set;
     }
     
-    public async Task CreateAsync(T entity)
+    public async Task<T> CreateAsync(T entity)
     {
-        await _set.AddAsync(entity);
+        var createdEntity = await _set.AddAsync(entity);
         await _context.SaveChangesAsync();
+        return createdEntity.Entity;
     }
 
     public async Task<T?> GetAsync(long id)
