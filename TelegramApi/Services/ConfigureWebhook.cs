@@ -1,4 +1,5 @@
 using Telegram.Bot;
+using Telegram.Bot.Types.Enums;
 
 namespace TelegramApi.Services;
 
@@ -15,14 +16,24 @@ public class ConfigureWebhook : IHostedService
         _botConfig = botConfig;
     }
     
-    public Task StartAsync(CancellationToken cancellationToken)
+    public async Task StartAsync(CancellationToken cancellationToken)
     {
         using var scope = _services.CreateScope();
         var botClient = scope.ServiceProvider.GetRequiredService<ITelegramBotClient>();
+        var webhookAddress = string.Empty; // secret from azure
+        _logger.LogInformation("Setting webhook: {WebhookAddress}", webhookAddress);
+        await botClient.SetWebhookAsync(
+            url: webhookAddress,
+            allowedUpdates: Array.Empty<UpdateType>(),
+            cancellationToken: cancellationToken);
     }
 
-    public Task StopAsync(CancellationToken cancellationToken)
+    public async Task StopAsync(CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        using var scope = _services.CreateScope();
+        var botClient = scope.ServiceProvider.GetRequiredService<ITelegramBotClient>();
+        
+        _logger.LogInformation("Removing webhook");
+        await botClient.DeleteWebhookAsync(cancellationToken: cancellationToken);
     }
 }
