@@ -6,9 +6,9 @@ namespace TelegramApi;
 
 public class Startup
 {
-    private IConfiguration Configuration { get; set; }
+    private IConfiguration Configuration { get; }
 
-    private BotConfiguration BotConfig { get; set; }
+    private BotConfiguration BotConfig { get; }
     
     public Startup(IConfiguration configuration)
     {
@@ -39,7 +39,7 @@ public class Startup
         {
             var token = BotConfig.BotToken;
             endpoints.MapControllerRoute(name: "tgwebhook",
-                pattern: $"bot/token",
+                pattern: $"{token}",
                 new { controller = "Webhook", action = "Post" });
             endpoints.MapControllers();
         });
