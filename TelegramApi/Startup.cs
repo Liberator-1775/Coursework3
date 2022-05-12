@@ -23,6 +23,7 @@ public class Startup
             .AddTypedClient<ITelegramBotClient>(client => new TelegramBotClient(BotConfig.BotToken, client));
         services.AddScoped<HandleUpdateService>();
         services.AddControllers().AddNewtonsoftJson();
+        services.AddSwaggerGen();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -32,6 +33,9 @@ public class Startup
             app.UseDeveloperExceptionPage();
         }
 
+        app.UseSwagger();
+        app.UseSwaggerUI();
+        
         app.UseRouting();
         app.UseCors();
 
