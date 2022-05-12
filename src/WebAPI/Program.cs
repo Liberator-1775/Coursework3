@@ -1,6 +1,4 @@
-using WebAPI;
-
-namespace Telegram.Bot.Examples.WebHook;
+namespace WebAPI;
 
 public static class Program
 {
