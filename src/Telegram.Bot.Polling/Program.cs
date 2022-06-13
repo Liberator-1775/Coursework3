@@ -16,8 +16,8 @@ public static class Program
 
         using var cts = new CancellationTokenSource();
 
-        _bot.StartReceiving(updateHandler: Handlers.HandleUpdateAsync,
-                           errorHandler: Handlers.HandleErrorAsync,
+        _bot.StartReceiving(updateHandler: AccuWeatherHandlers.HandleUpdateAsync,
+                           errorHandler: AccuWeatherHandlers.HandleErrorAsync,
                            receiverOptions: new ReceiverOptions()
                            {
                                AllowedUpdates = Array.Empty<UpdateType>()

@@ -9,7 +9,7 @@ using File = System.IO.File;
 
 namespace Telegram.Bot.Polling;
 
-public static class Handlers
+public static class YaWeatherHandlers
 {
     public static Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
     {
@@ -65,7 +65,7 @@ public static class Handlers
             const string filePath = "../../../../Telegram.Bot.Infrastructure/Countries/ru.json";
             await using var openStream = File.OpenRead(filePath);
             var cities = (await JsonSerializer.DeserializeAsync<City[]>(openStream))!;
-            var chosenCity = cities.FirstOrDefault(c => c.CityName.Equals(message.Text));
+            var chosenCity = cities.FirstOrDefault(c => c.CityName.ToLower().Contains(message.Text!.ToLower()));
 
             if (chosenCity is null)
             {
